@@ -6,7 +6,7 @@
 <body>
   <h1>Contact Us</h1>
 
-    <form action="nextPage.html" type="Post">
+  <form action="nextPage.html" type="Post">
     First Name: <input type="text" id="fName"><br>
     Last Name: <input type="text" id="lName"><br>
     Email: <input type="text" id="email"><br>
@@ -16,5 +16,28 @@
 
      <a href="Cooper.html">Go to HomePage</a>
      <a href="Cooper2.html">Go to Second Page</a>
+
+      <script>
+    const fName = document.getElementById("fName");
+    const lName = document.getElementById("lName");
+    const email = document.getElementById("email");
+    const terms = document.getElementById("terms");
+
+    fName.style.backgroundColor = "red";
+    lName.style.backgroundColor = "red";
+    email.style.backgroundColor = "red";
+   
+    const inputs = [fName, lName, email];
+
+    inputs.forEach(function(input) {
+      input.addEventListener("input", function() {
+        if (input.value.trim() !== "") {
+          input.style.backgroundColor = "white";
+        } else {
+          input.style.backgroundColor = "red";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
